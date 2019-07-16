@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+	<meta charset="UTF-8">
+	<title>Buton Rengi</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+	<style type="text/css" media="screen">
+		.yaziAlani{
+			height: auto;
+			width: 100%;
+			text-align: justify;
+			padding: 30px;
+			color:white;
+			background-color: rgba(0,0,0);
+		}	
+	</style>
+</head>
+<body>
+		<main role="main" class="flex-shrink-0">
+			<div class="container">
+				<h1 class="mt-5">Buton Rengi Örneği</h1>
+				<div class="butonAlani"></div>
+				<div style="margin: 20px;"></div>
+				<div class="yaziAlani">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam labore similique maiores culpa iusto, saepe ratione tempora, suscipit consequatur dignissimos obcaecati, nisi modi, quasi architecto sit sunt dolores ipsa inventore.
+				</div>
+			</div>
+		</main>
+</body>
+	<script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function($) {
+			var i;
+			for (i = 0; i < 15; i++) { 
+				var renk1 = Math.floor((Math.random() * 255) + 1);
+				var renk2 = Math.floor((Math.random() * 255) + 1);
+				var renk3 = Math.floor((Math.random() * 255) + 1);
+				$('.butonAlani').append('<button class="btn btn-outline-secondary renk-butonu" data-renk="rgb('+renk1+','+renk2+','+renk3+')" style="margin-right:10px; background-color:rgb('+renk1+','+renk2+','+renk3+'); color:white;">Boya</button>');
+				$('button.renk-butonu').click(function(e) {
+					var _this = $(this);
+					$('.yaziAlani').css('background-color',_this.data('renk'));
+				});
+			}
+		});
+	</script>
+</html>
